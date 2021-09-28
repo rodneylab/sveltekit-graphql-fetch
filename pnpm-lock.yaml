@@ -2,6 +2,7 @@ lockfileVersion: 5.3
 
 specifiers:
   '@fontsource/source-sans-pro': ^4.5.0
+  '@sveltejs/adapter-static': ^1.0.0-next.20
   '@sveltejs/kit': next
   '@typescript-eslint/eslint-plugin': ^4.31.1
   '@typescript-eslint/parser': ^4.31.1
@@ -19,7 +20,8 @@ specifiers:
 
 devDependencies:
   '@fontsource/source-sans-pro': 4.5.0
-  '@sveltejs/kit': 1.0.0-next.174_svelte@3.43.0
+  '@sveltejs/adapter-static': 1.0.0-next.20
+  '@sveltejs/kit': 1.0.0-next.175_svelte@3.43.0
   '@typescript-eslint/eslint-plugin': 4.31.2_3815fab247b4312be6d1f55eb1f81298
   '@typescript-eslint/parser': 4.31.2_eslint@7.32.0+typescript@4.4.3
   dotenv: 10.0.0
@@ -121,8 +123,12 @@ packages:
       picomatch: 2.3.0
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.174_svelte@3.43.0:
-    resolution: {integrity: sha512-Kgtz5kZTyPnpPb8pjMMOo+uTDRBkiObRLnFaBDnYFd2ahUuhAPHHPlbcIDwO5psN4t6UbPdpdkoLNCAyDgBLdw==}
+  /@sveltejs/adapter-static/1.0.0-next.20:
+    resolution: {integrity: sha512-vutVoloX35E6QnnrNofToOWn/er/Li2yoR15NbTPZ26Gp3M6A2ckQJNMJrDbBA5XZsktNIXchIVGaADnKIJrow==}
+    dev: true
+
+  /@sveltejs/kit/1.0.0-next.175_svelte@3.43.0:
+    resolution: {integrity: sha512-GRD5gdCE0kuWZLwnBkQh933dJlT6lFiglpxC3g1U2aq8c4og/2jzDqkFJLsSMTzRu17JFKni6s6ZhEwhjojTSQ==}
     engines: {node: ^12.20 || >=14.13}
     hasBin: true
     peerDependencies:

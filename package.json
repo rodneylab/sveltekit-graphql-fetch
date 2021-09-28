@@ -2,9 +2,9 @@
   "name": "sveltekit-graphql-fetch",
   "version": "0.0.1",
   "scripts": {
-    "dev": "svelte-kit dev -p 3030",
+    "dev": "svelte-kit dev -p 3000",
     "build": "svelte-kit build",
-    "preview": "svelte-kit preview",
+    "preview": "svelte-kit preview -p 3030",
     "check": "svelte-check --tsconfig ./tsconfig.json",
     "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
     "lint": "prettier --ignore-path .gitignore --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
@@ -13,6 +13,7 @@
   },
   "devDependencies": {
     "@fontsource/source-sans-pro": "^4.5.0",
+    "@sveltejs/adapter-static": "^1.0.0-next.20",
     "@sveltejs/kit": "next",
     "@typescript-eslint/eslint-plugin": "^4.31.1",
     "@typescript-eslint/parser": "^4.31.1",
