@@ -22,7 +22,7 @@
   import '@fontsource/source-sans-pro';
   import rates from '$lib/shared/stores/rates';
   export let data: {
-    latest: { baseCurrency: string; quoteCurrency: string; date: Date; quote: string }[];
+    latest: { baseCurrency: string; quoteCurrency: string; date: Date; quote: number }[];
   };
   rates.set(data.latest);
   let newCurrency = '';
@@ -49,8 +49,6 @@
     }
   }
 </script>
-
-<!-- <pre>{JSON.stringify(data, null, 2)}</pre> -->
 
 <main class="container">
   <div class="heading">
