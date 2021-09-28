@@ -2,7 +2,7 @@ lockfileVersion: 5.3
 
 specifiers:
   '@fontsource/source-sans-pro': ^4.5.0
-  '@sveltejs/adapter-static': ^1.0.0-next.20
+  '@sveltejs/adapter-cloudflare-workers': ^1.0.0-next.22
   '@sveltejs/kit': next
   '@typescript-eslint/eslint-plugin': ^4.31.1
   '@typescript-eslint/parser': ^4.31.1
@@ -20,7 +20,7 @@ specifiers:
 
 devDependencies:
   '@fontsource/source-sans-pro': 4.5.0
-  '@sveltejs/adapter-static': 1.0.0-next.20
+  '@sveltejs/adapter-cloudflare-workers': 1.0.0-next.22
   '@sveltejs/kit': 1.0.0-next.175_svelte@3.43.0
   '@typescript-eslint/eslint-plugin': 4.31.2_3815fab247b4312be6d1f55eb1f81298
   '@typescript-eslint/parser': 4.31.2_eslint@7.32.0+typescript@4.4.3
@@ -94,6 +94,10 @@ packages:
     resolution: {integrity: sha512-wdppn25U8z/2yiaT6YGquE6X8sSv7hNMWSXYSSU1jGv/yd6XqjXgTDJ8KP4NgjTXfJ3GbRjeeb8RTV7a/VpM+w==}
     dev: true
 
+  /@iarna/toml/2.2.5:
+    resolution: {integrity: sha512-trnsAYxU3xnS1gPHPyU961coFyLkh4gAD/0zQ5mymY4yOZ+CYvsPqUbOFSw0aDM4y0tV7tiFxL/1XfXPNC6IPg==}
+    dev: true
+
   /@nodelib/fs.scandir/2.1.5:
     resolution: {integrity: sha512-vq24Bq3ym5HEQm2NKCr3yXDwjc7vTsEThRDnkp2DK9p1uqLR+DHurm/NOTo0KG7HYHU7eppKZj3MyqYuMBf62g==}
     engines: {node: '>= 8'}
@@ -123,8 +127,11 @@ packages:
       picomatch: 2.3.0
     dev: true
 
-  /@sveltejs/adapter-static/1.0.0-next.20:
-    resolution: {integrity: sha512-vutVoloX35E6QnnrNofToOWn/er/Li2yoR15NbTPZ26Gp3M6A2ckQJNMJrDbBA5XZsktNIXchIVGaADnKIJrow==}
+  /@sveltejs/adapter-cloudflare-workers/1.0.0-next.22:
+    resolution: {integrity: sha512-+xx/cmkjAWy75mQcbcT/R7p83vh3J3RDWRZZ9aTSANoZBZSUKzPk3POnRDmurhZWvg4fw4wwfFepgLW2l8xrZQ==}
+    dependencies:
+      '@iarna/toml': 2.2.5
+      esbuild: 0.12.29
     dev: true
 
   /@sveltejs/kit/1.0.0-next.175_svelte@3.43.0:
