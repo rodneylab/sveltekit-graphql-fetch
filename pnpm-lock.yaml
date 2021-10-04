@@ -4,7 +4,7 @@ specifiers:
   '@commitlint/cli': ^13.2.0
   '@commitlint/config-conventional': ^13.2.0
   '@fontsource/source-sans-pro': ^4.5.0
-  '@sveltejs/adapter-netlify': ^1.0.0-next.32
+  '@sveltejs/adapter-netlify': 1.0.0-next.31
   '@sveltejs/kit': next
   '@typescript-eslint/eslint-plugin': ^4.32.0
   '@typescript-eslint/parser': ^4.32.0
@@ -24,7 +24,7 @@ devDependencies:
   '@commitlint/cli': 13.2.0_typescript@4.4.3
   '@commitlint/config-conventional': 13.2.0
   '@fontsource/source-sans-pro': 4.5.0
-  '@sveltejs/adapter-netlify': 1.0.0-next.32
+  '@sveltejs/adapter-netlify': 1.0.0-next.31
   '@sveltejs/kit': 1.0.0-next.179_svelte@3.43.1
   '@typescript-eslint/eslint-plugin': 4.32.0_1eacf2495a01e8a68ffa99482308e8ec
   '@typescript-eslint/parser': 4.32.0_eslint@7.32.0+typescript@4.4.3
@@ -297,11 +297,11 @@ packages:
       picomatch: 2.3.0
     dev: true
 
-  /@sveltejs/adapter-netlify/1.0.0-next.32:
-    resolution: {integrity: sha512-nJIn806J1p5+YwwYN6EzSslAENfEuSuoNcRJZZsoI/PRJDjgpUJm3Y58iL0ZbaLEMS6iGyMFz2jjXAAUefpGHQ==}
+  /@sveltejs/adapter-netlify/1.0.0-next.31:
+    resolution: {integrity: sha512-MmN8OLXVLmc51MpoSXJyd4M+MSO3z2nI+rmMy0UklQ4iwYrKXBj2fz53KVpJkdY+36B0NrQipNHYT8yW7u/4EA==}
     dependencies:
       '@iarna/toml': 2.2.5
-      esbuild: 0.13.3
+      esbuild: 0.12.29
     dev: true
 
   /@sveltejs/kit/1.0.0-next.179_svelte@3.43.1:
@@ -983,6 +983,12 @@ packages:
     requiresBuild: true
     dev: true
     optional: true
+
+  /esbuild/0.12.29:
+    resolution: {integrity: sha512-w/XuoBCSwepyiZtIRsKsetiLDUVGPVw1E/R3VTFSecIy8UR7Cq3SOtwKHJMFoVqqVG36aGkzh4e8BvpO1Fdc7g==}
+    hasBin: true
+    requiresBuild: true
+    dev: true
 
   /esbuild/0.13.3:
     resolution: {integrity: sha512-98xovMLKnyhv3gcReUuAEi5Ig1rK6SIgvsJuBIcfwzqGSEHsV8UJjMlmkhHoHMf9XZybMpE9Zax8AA8f7i2hlQ==}
