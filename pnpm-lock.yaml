@@ -4,7 +4,6 @@ specifiers:
   '@commitlint/cli': ^13.2.0
   '@commitlint/config-conventional': ^13.2.0
   '@fontsource/source-sans-pro': ^4.5.0
-  '@sveltejs/adapter-cloudflare-workers': ^1.0.0-next.23
   '@sveltejs/adapter-netlify': ^1.0.0-next.32
   '@sveltejs/kit': next
   '@typescript-eslint/eslint-plugin': ^4.32.0
@@ -25,7 +24,6 @@ devDependencies:
   '@commitlint/cli': 13.2.0_typescript@4.4.3
   '@commitlint/config-conventional': 13.2.0
   '@fontsource/source-sans-pro': 4.5.0
-  '@sveltejs/adapter-cloudflare-workers': 1.0.0-next.23
   '@sveltejs/adapter-netlify': 1.0.0-next.32
   '@sveltejs/kit': 1.0.0-next.179_svelte@3.43.1
   '@typescript-eslint/eslint-plugin': 4.32.0_1eacf2495a01e8a68ffa99482308e8ec
@@ -297,13 +295,6 @@ packages:
     dependencies:
       estree-walker: 2.0.2
       picomatch: 2.3.0
-    dev: true
-
-  /@sveltejs/adapter-cloudflare-workers/1.0.0-next.23:
-    resolution: {integrity: sha512-XZrEKr39kH9nm5zdchWe75XL8eNJv/vQXEpBbTRP9Isg8ugSQI4YTlqyStv4xxJugu4u9G2WH9rBFQQUXlJxtg==}
-    dependencies:
-      '@iarna/toml': 2.2.5
-      esbuild: 0.13.3
     dev: true
 
   /@sveltejs/adapter-netlify/1.0.0-next.32:
