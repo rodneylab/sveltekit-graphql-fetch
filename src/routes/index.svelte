@@ -21,9 +21,9 @@
 <script lang="ts">
   import '@fontsource/source-sans-pro';
   import rates from '$lib/shared/stores/rates';
-  export let data: {
-    latest: { baseCurrency: string; quoteCurrency: string; date: Date; quote: number }[];
-  };
+  import type { Query } from '$lib/generated/graphql';
+  export let data: Query;
+
   rates.set(data.latest);
   let newCurrency = '';
   let submitting = false;
@@ -39,7 +39,7 @@
         },
         body: JSON.stringify({ currencies: [newCurrency] })
       });
-      const responseData = await response.json();
+      const responseData: { data: Query } = await response.json();
       const rate = responseData.data.latest[0];
       submitting = false;
       rates.set([...$rates, rate]);

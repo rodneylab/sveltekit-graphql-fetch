@@ -1,3 +1,4 @@
+import type { Query, QueryLatestArgs } from '$lib/generated/graphql';
 import type { Request } from '@sveltejs/kit';
 
 export async function post(
@@ -8,12 +9,12 @@ export async function post(
 
     const query = `
       query latestQuery(
-        $latestQueryBaseCurrency: String = "EUR"
-        $latestQueryQuoteCurrencies: [String!]
+        $baseCurrency: String = "EUR"
+        $quoteCurrencies: [String!]
       ) {
         latest(
-          baseCurrency: $latestQueryBaseCurrency
-          quoteCurrencies: $latestQueryQuoteCurrencies
+          baseCurrency: $baseCurrency
+          quoteCurrencies: $quoteCurrencies
         ) {
           baseCurrency
           quoteCurrency
@@ -23,9 +24,9 @@ export async function post(
       }
     `;
 
-    const variables = {
-      latestQueryBaseCurrency: 'EUR',
-      latestQueryQuoteCurrencies: currencies
+    const variables: QueryLatestArgs = {
+      baseCurrency: 'EUR',
+      quoteCurrencies: currencies
     };
 
     const response = await fetch('https://swop.cx/graphql', {
@@ -39,7 +40,7 @@ export async function post(
         variables
       })
     });
-    const data = await response.json();
+    const data: { data: Query } = await response.json();
 
     return {
       body: JSON.stringify({ ...data })

@@ -1,0 +1,15 @@
+{
+  "overwrite": true,
+  "schema": {
+    "https://swop.cx/graphql": {
+      "headers": {
+        "Authorization": "ApiKey ${SWOP_API_KEY}"
+      }
+    }
+  },
+  "generates": {
+    "src/lib/generated/graphql.ts": {
+      "plugins": ["typescript", "typescript-operations", "graphql-codegen-svelte-apollo"]
+    }
+  }
+}
