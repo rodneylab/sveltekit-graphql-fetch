@@ -13,7 +13,7 @@
 
 [![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/rodneylab/sveltekit-graphql-fetch)
 
-SvelteKit demo code for making GraphQL queries with just fetch and no need for urql or Apollo client. The code accompanies the <a aria-label="Open Rodney Lab blog post on Svelte Kit Graph Q L queries with fetch only" href="https://rodneylab.com/sveltekit-graphql-queries-fetch/">article on SvelteKit GraphQL queries wit fetch only</a>. If you have any questions, please drop a comment at the bottom of that page.
+SvelteKit demo code for making GraphQL queries with just fetch and no need for urql or Apollo client. The code accompanies the <a aria-label="Open Rodney Lab blog post on Svelte Kit Graph Q L queries with fetch only" href="https://rodneylab.com/sveltekit-graphql-queries-fetch/">article on SvelteKit GraphQL queries with fetch only</a>. If you have any questions, please drop a comment at the bottom of that page.
 
 ## Building and previewing the site
 
