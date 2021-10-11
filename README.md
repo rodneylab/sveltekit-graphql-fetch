@@ -20,7 +20,7 @@ SvelteKit demo code for making GraphQL queries with just fetch and no need for u
 If you're seeing this, you've probably already done this step. Congrats!
 
 ```bash
-git clone https://github.com/rodneylab/sveltekit-intersection-observer.git sveltekit-graphql-fetch
+git clone https://github.com/rodneylab/sveltekit-graphql-fetch.git
 cd sveltekit-graphql-fetch
 pnpm install # or npm install
 pnpm run dev
