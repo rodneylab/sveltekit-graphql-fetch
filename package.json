@@ -13,7 +13,7 @@
     "gen": "export $(grep SWOP_API_KEY .env | xargs) && graphql-codegen --config codegen.json && prettier --write src/lib/generated/graphql.ts"
   },
   "devDependencies": {
-    "@commitlint/cli": "^13.2.0",
+    "@commitlint/cli": "^13.2.1",
     "@commitlint/config-conventional": "^13.2.0",
     "@fontsource/source-sans-pro": "^4.5.0",
     "@graphql-codegen/cli": "^2.2.0",
@@ -23,14 +23,14 @@
     "@typescript-eslint/eslint-plugin": "^4.33.0",
     "@typescript-eslint/parser": "^4.33.0",
     "dotenv": "^10.0.0",
-    "eslint": "^7.32.0",
+    "eslint": "^8.0.0",
     "eslint-config-prettier": "^8.3.0",
     "eslint-plugin-svelte3": "^3.2.1",
     "graphql-codegen-svelte-apollo": "^1.0.1",
     "prettier": "^2.4.1",
     "prettier-plugin-svelte": "^2.4.0",
     "svelte": "^3.43.1",
-    "svelte-check": "^2.2.6",
+    "svelte-check": "^2.2.7",
     "svelte-preprocess": "^4.9.8",
     "tslib": "^2.3.1",
     "typescript": "^4.4.3"
