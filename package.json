@@ -18,8 +18,6 @@
     "@fontsource/source-sans-pro": "^4.5.1",
     "@graphql-codegen/cli": "^2.3.0",
     "@graphql-codegen/typescript": "^2.4.1",
-    "@sveltejs/adapter-cloudflare": "^1.0.0-next.2",
-    "@sveltejs/adapter-netlify": "1.0.0-next.32",
     "@sveltejs/kit": "next",
     "@typescript-eslint/eslint-plugin": "^5.4.0",
     "@typescript-eslint/parser": "^5.4.0",
@@ -43,5 +41,8 @@
   "bugs": {
     "url": "https://github.com/rodneylab/sveltekit-graphql-fetch/issues"
   },
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "@sveltejs/adapter-cloudflare": "^1.0.0-next.2"
+  }
 }

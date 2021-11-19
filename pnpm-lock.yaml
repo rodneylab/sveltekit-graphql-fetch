@@ -7,7 +7,6 @@ specifiers:
   '@graphql-codegen/cli': ^2.3.0
   '@graphql-codegen/typescript': ^2.4.1
   '@sveltejs/adapter-cloudflare': ^1.0.0-next.2
-  '@sveltejs/adapter-netlify': 1.0.0-next.32
   '@sveltejs/kit': next
   '@typescript-eslint/eslint-plugin': ^5.4.0
   '@typescript-eslint/parser': ^5.4.0
@@ -24,14 +23,15 @@ specifiers:
   tslib: ^2.3.1
   typescript: ^4.5.2
 
+dependencies:
+  '@sveltejs/adapter-cloudflare': 1.0.0-next.2
+
 devDependencies:
   '@commitlint/cli': 15.0.0
   '@commitlint/config-conventional': 15.0.0
   '@fontsource/source-sans-pro': 4.5.1
   '@graphql-codegen/cli': 2.3.0_typescript@4.5.2
   '@graphql-codegen/typescript': 2.4.1
-  '@sveltejs/adapter-cloudflare': 1.0.0-next.2
-  '@sveltejs/adapter-netlify': 1.0.0-next.32
   '@sveltejs/kit': 1.0.0-next.196_svelte@3.44.1
   '@typescript-eslint/eslint-plugin': 5.4.0_d6f2571581882eb2d6c9d9867e002185
   '@typescript-eslint/parser': 5.4.0_eslint@8.2.0+typescript@4.5.2
@@ -1341,14 +1341,7 @@ packages:
     resolution: {integrity: sha512-4Q7ZuoMck7wwzIO7gd8gqnm7gWflztTDHU/C1DzLr8V2UprQFQwsUE/padtQhFPXkgAiXJ8AwLksey4A8qjOsA==}
     dependencies:
       esbuild: 0.13.14
-    dev: true
-
-  /@sveltejs/adapter-netlify/1.0.0-next.32:
-    resolution: {integrity: sha512-nJIn806J1p5+YwwYN6EzSslAENfEuSuoNcRJZZsoI/PRJDjgpUJm3Y58iL0ZbaLEMS6iGyMFz2jjXAAUefpGHQ==}
-    dependencies:
-      '@iarna/toml': 2.2.5
-      esbuild: 0.13.14
-    dev: true
+    dev: false
 
   /@sveltejs/kit/1.0.0-next.196_svelte@3.44.1:
     resolution: {integrity: sha512-z7sA/2/3Il5biibjPXCYXJC11TyFhgCvMaJvvbtMnu2l3EmOmJBMS+r2djGptzfFsugSVNwGQFn8+ldWQWq3jA==}
@@ -2409,7 +2402,6 @@ packages:
     cpu: [arm64]
     os: [android]
     requiresBuild: true
-    dev: true
     optional: true
 
   /esbuild-darwin-64/0.13.14:
@@ -2417,7 +2409,6 @@ packages:
     cpu: [x64]
     os: [darwin]
     requiresBuild: true
-    dev: true
     optional: true
 
   /esbuild-darwin-arm64/0.13.14:
@@ -2425,7 +2416,6 @@ packages:
     cpu: [arm64]
     os: [darwin]
     requiresBuild: true
-    dev: true
     optional: true
 
   /esbuild-freebsd-64/0.13.14:
@@ -2433,7 +2423,6 @@ packages:
     cpu: [x64]
     os: [freebsd]
     requiresBuild: true
-    dev: true
     optional: true
 
   /esbuild-freebsd-arm64/0.13.14:
@@ -2441,7 +2430,6 @@ packages:
     cpu: [arm64]
     os: [freebsd]
     requiresBuild: true
-    dev: true
     optional: true
 
   /esbuild-linux-32/0.13.14:
@@ -2449,7 +2437,6 @@ packages:
     cpu: [ia32]
     os: [linux]
     requiresBuild: true
-    dev: true
     optional: true
 
   /esbuild-linux-64/0.13.14:
@@ -2457,7 +2444,6 @@ packages:
     cpu: [x64]
     os: [linux]
     requiresBuild: true
-    dev: true
     optional: true
 
   /esbuild-linux-arm/0.13.14:
@@ -2465,7 +2451,6 @@ packages:
     cpu: [arm]
     os: [linux]
     requiresBuild: true
-    dev: true
     optional: true
 
   /esbuild-linux-arm64/0.13.14:
@@ -2473,7 +2458,6 @@ packages:
     cpu: [arm64]
     os: [linux]
     requiresBuild: true
-    dev: true
     optional: true
 
   /esbuild-linux-mips64le/0.13.14:
@@ -2481,7 +2465,6 @@ packages:
     cpu: [mips64el]
     os: [linux]
     requiresBuild: true
-    dev: true
     optional: true
 
   /esbuild-linux-ppc64le/0.13.14:
@@ -2489,7 +2472,6 @@ packages:
     cpu: [ppc64]
     os: [linux]
     requiresBuild: true
-    dev: true
     optional: true
 
   /esbuild-netbsd-64/0.13.14:
@@ -2497,7 +2479,6 @@ packages:
     cpu: [x64]
     os: [netbsd]
     requiresBuild: true
-    dev: true
     optional: true
 
   /esbuild-openbsd-64/0.13.14:
@@ -2505,7 +2486,6 @@ packages:
     cpu: [x64]
     os: [openbsd]
     requiresBuild: true
-    dev: true
     optional: true
 
   /esbuild-sunos-64/0.13.14:
@@ -2513,7 +2493,6 @@ packages:
     cpu: [x64]
     os: [sunos]
     requiresBuild: true
-    dev: true
     optional: true
 
   /esbuild-windows-32/0.13.14:
@@ -2521,7 +2500,6 @@ packages:
     cpu: [ia32]
     os: [win32]
     requiresBuild: true
-    dev: true
     optional: true
 
   /esbuild-windows-64/0.13.14:
@@ -2529,7 +2507,6 @@ packages:
     cpu: [x64]
     os: [win32]
     requiresBuild: true
-    dev: true
     optional: true
 
   /esbuild-windows-arm64/0.13.14:
@@ -2537,7 +2514,6 @@ packages:
     cpu: [arm64]
     os: [win32]
     requiresBuild: true
-    dev: true
     optional: true
 
   /esbuild/0.13.14:
@@ -2562,7 +2538,6 @@ packages:
       esbuild-windows-32: 0.13.14
       esbuild-windows-64: 0.13.14
       esbuild-windows-arm64: 0.13.14
-    dev: true
 
   /escalade/3.1.1:
     resolution: {integrity: sha512-k0er2gUkLf8O0zKJiAhmkTnJlTvINGv7ygDNPbeIsX/TJjGJZHuh9B2UxbsaEkmlEo9MfhrSzmhIlhRlI2GXnw==}
