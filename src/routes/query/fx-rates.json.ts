@@ -1,11 +1,11 @@
 import type { Query, QueryLatestArgs } from '$lib/generated/graphql';
-import type { Request } from '@sveltejs/kit';
+import type { RequestHandler } from '@sveltejs/kit';
 
-export async function post(
-  request: Request & { body: { currencies: string[] } }
-): Promise<{ body: string } | { error: string; status: number }> {
+export async function post({ request }: { request: Request }): Promise<ReturnType<RequestHandler>> {
   try {
-    const { currencies = ['CAD', 'GBP', 'IDR', 'INR', 'USD'] } = request.body;
+    const { currencies = ['CAD', 'GBP', 'IDR', 'INR', 'USD'] } = (await request.json()) as {
+      currencies: string[];
+    };
 
     const query = `
       query latestQuery(
@@ -50,7 +50,7 @@ export async function post(
     console.error(error);
     return {
       status: 500,
-      error
+      body: error
     };
   }
 }
