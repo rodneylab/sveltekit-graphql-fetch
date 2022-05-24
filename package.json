@@ -1,6 +1,8 @@
 {
   "name": "sveltekit-graphql-fetch",
   "version": "0.0.1",
+  "license": "BSD-3-Clause",
+  "description": "SvelteKit GraphQL queries using fetch only: how you can drop Apollo client and urql dependencies altogether to make your Svelte app leaner.",
   "scripts": {
     "dev": "svelte-kit dev -p 3000",
     "build": "svelte-kit build",
