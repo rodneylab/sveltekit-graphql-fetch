@@ -1,7 +1,7 @@
 import type { Query, QueryLatestArgs } from '$lib/generated/graphql';
-import type { RequestHandler } from '@sveltejs/kit';
+import type { RequestHandler } from './__types/fx-rates.json';
 
-export async function post({ request }: { request: Request }): Promise<ReturnType<RequestHandler>> {
+export const POST: RequestHandler = async function POST({ request }) {
   try {
     const { currencies = ['CAD', 'GBP', 'IDR', 'INR', 'USD'] } = (await request.json()) as {
       currencies: string[];
@@ -53,4 +53,4 @@ export async function post({ request }: { request: Request }): Promise<ReturnTyp
       body: error
     };
   }
-}
+};

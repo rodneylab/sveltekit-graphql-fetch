@@ -19,7 +19,7 @@
 </script>
 
 <script lang="ts">
-  import '@fontsource/source-sans-pro';
+  import '@fontsource/source-sans-pro/latin.css';
   import rates from '$lib/shared/stores/rates';
   import type { Query } from '$lib/generated/graphql';
   export let data: Query;
