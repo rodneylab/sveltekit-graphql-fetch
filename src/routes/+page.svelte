@@ -1,30 +1,10 @@
-<script context="module">
-  export const load = async ({ fetch }) => {
-    try {
-      const response = await fetch('/query/fx-rates.json', {
-        method: 'POST',
-        credentials: 'same-origin',
-        headers: {
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({ currencies: ['CAD', 'GBP', 'IDR', 'INR', 'USD'] })
-      });
-      return {
-        props: { ...(await response.json()) }
-      };
-    } catch (error) {
-      console.error(`Error in load function for /: ${error}`);
-    }
-  };
-</script>
-
 <script lang="ts">
   import '@fontsource/source-sans-pro/latin.css';
   import rates from '$lib/shared/stores/rates';
   import type { Query } from '$lib/generated/graphql';
-  export let data: Query;
+  export let data: { data: Query };
 
-  rates.set(data.latest);
+  rates.set(data.data.latest);
   let newCurrency = '';
   let submitting = false;
 

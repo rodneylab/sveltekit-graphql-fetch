@@ -1,7 +1,8 @@
 import type { Query, QueryLatestArgs } from '$lib/generated/graphql';
-import type { RequestHandler } from './__types/fx-rates.json';
+import type { RequestHandler } from './$types';
+import { error } from '@sveltejs/kit';
 
-export const POST: RequestHandler = async function POST({ request }) {
+export const POST: RequestHandler = async function POST({ request, setHeaders }) {
   try {
     const { currencies = ['CAD', 'GBP', 'IDR', 'INR', 'USD'] } = (await request.json()) as {
       currencies: string[];
@@ -42,15 +43,13 @@ export const POST: RequestHandler = async function POST({ request }) {
     });
     const data: { data: Query } = await response.json();
 
-    return {
-      body: JSON.stringify({ ...data })
-    };
-  } catch (err) {
-    const error = `Error in /query/fx-rates.json.ts: ${err}`;
-    console.error(error);
-    return {
-      status: 500,
-      body: error
-    };
+    setHeaders({
+      'Content-Type': 'application/json'
+    });
+
+    return new Response(JSON.stringify({ ...data }));
+  } catch (err: unknown) {
+    const message = `Error in /query/fx-rates.json.ts: ${err as string}`;
+    throw error(500, message as string);
   }
 };
