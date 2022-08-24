@@ -4,9 +4,9 @@
   "license": "BSD-3-Clause",
   "description": "SvelteKit GraphQL queries using fetch only: how you can drop Apollo client and urql dependencies altogether to make your Svelte app leaner.",
   "scripts": {
-    "dev": "vite dev --port 3000",
+    "dev": "vite dev",
     "build": "vite build",
-    "preview": "vite preview --port 3000",
+    "preview": "vite preview",
     "check": "svelte-check --fail-on-hints",
     "check:watch": "svelte-check --tsconfig ./tsconfig.json --watch",
     "lint": "prettier --ignore-path .gitignore --check --plugin-search-dir=. . && eslint --ignore-path .gitignore .",
