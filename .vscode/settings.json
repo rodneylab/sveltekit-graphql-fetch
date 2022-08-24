@@ -1,17 +1,17 @@
 {
-  "editor.formatOnSave": true,
-  "[markdown]": {
-    "editor.wordWrap": "bounded",
-    "editor.wordWrapColumn": 80,
-    "editor.quickSuggestions": {
-      "comments": "off",
-      "strings": "off",
-      "other": "off"
-    }
-  },
-  "[svelte]": {
-    "editor.defaultFormatter": "svelte.svelte-vscode"
-  },
-  "spellright.language": ["en-GB"],
-  "spellright.documentTypes": ["markdown", "latex"]
+	"editor.formatOnSave": true,
+	"[markdown]": {
+		"editor.wordWrap": "bounded",
+		"editor.wordWrapColumn": 80,
+		"editor.quickSuggestions": {
+			"comments": "off",
+			"strings": "off",
+			"other": "off"
+		}
+	},
+	"[svelte]": {
+		"editor.defaultFormatter": "svelte.svelte-vscode"
+	},
+	"spellright.language": ["en-GB"],
+	"spellright.documentTypes": ["markdown", "latex"]
 }
