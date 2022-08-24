@@ -1,6 +1,7 @@
+import { SWOP_API_KEY } from '$env/static/private';
 import type { Query, QueryLatestArgs } from '$lib/generated/graphql';
-import type { RequestHandler } from './$types';
 import { error } from '@sveltejs/kit';
+import type { RequestHandler } from './$types';
 
 export const POST: RequestHandler = async function POST({ request, setHeaders }) {
 	try {
@@ -34,7 +35,7 @@ export const POST: RequestHandler = async function POST({ request, setHeaders })
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
-				Authorization: `ApiKey ${process.env['SWOP_API_KEY']}`
+				Authorization: `ApiKey ${SWOP_API_KEY}`
 			},
 			body: JSON.stringify({
 				query,

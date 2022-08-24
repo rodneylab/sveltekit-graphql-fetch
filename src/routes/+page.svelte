@@ -2,7 +2,17 @@
 	import '@fontsource/source-sans-pro/latin.css';
 	import rates from '$lib/shared/stores/rates';
 	import type { Query } from '$lib/generated/graphql';
-	export let data: { data: Query };
+
+	export let data: {
+		data: {
+			latest: {
+				baseCurrency: string;
+				date: string;
+				quote: number;
+				quoteCurrency: string;
+			}[];
+		};
+	};
 
 	rates.set(data.data.latest);
 	let newCurrency = '';
