@@ -1,42 +1,15 @@
 <script lang="ts">
-	import '@fontsource/source-sans-pro/latin.css';
 	import rates from '$lib/shared/stores/rates';
-	import type { Query } from '$lib/generated/graphql';
+	import '@fontsource/source-sans-pro/latin.css';
+	import type { ActionData, PageData } from './$types';
 
-	export let data: {
-		data: {
-			latest: {
-				baseCurrency: string;
-				date: string;
-				quote: number;
-				quoteCurrency: string;
-			}[];
-		};
-	};
+	export let data: PageData;
+	export let form: ActionData;
 
-	rates.set(data.data.latest);
-	let newCurrency = '';
-	let submitting = false;
+	rates.set(data.latest);
 
-	async function handleSubmit() {
-		try {
-			submitting = true;
-			const response = await fetch('/query/fx-rates.json', {
-				method: 'POST',
-				credentials: 'same-origin',
-				headers: {
-					'Content-Type': 'application/json'
-				},
-				body: JSON.stringify({ currencies: [newCurrency] })
-			});
-			const responseData: { data: Query } = await response.json();
-			const rate = responseData.data.latest[0];
-			submitting = false;
-			rates.set([...$rates, rate]);
-			newCurrency = '';
-		} catch (error) {
-			console.error(`Error in handleSubmit function on /: ${error}`);
-		}
+	if (form?.rate) {
+		rates.set([...$rates, form.rate]);
 	}
 </script>
 
@@ -64,19 +37,19 @@
 		{/each}
 	</ul>
 
-	<form on:submit|preventDefault={handleSubmit}>
+	<form method="POST">
 		<span class="screen-reader-text"
 			><label for="additional-currency">Additional Currency</label></span
 		>
 		<input
-			bind:value={newCurrency}
 			required
 			id="additional-currency"
+			name="currency"
 			placeholder="AUD"
 			title="Add another currency"
 			type="text"
 		/>
-		<button type="submit" disabled={submitting}>Add currency</button>
+		<button type="submit">Add currency</button>
 	</form>
 </main>
 
