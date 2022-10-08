@@ -34,4 +34,6 @@ pnpm run build
 
 > You can preview the built app with `pnpm run preview`, regardless of whether you installed an adapter. This should _not_ be used to serve your app in production.
 
+This app uses the **Cloudflare adapter** so to build in Pages remember to set the build output directory to `.svelte-kit/cloudflare` in the Pages console.
+
 Feel free to jump into the [Rodney Lab matrix chat room](https://matrix.to/#/%23rodney:matrix.org).
