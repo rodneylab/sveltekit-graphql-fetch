@@ -9,7 +9,10 @@
 	},
 	"generates": {
 		"src/lib/generated/graphql.ts": {
-			"plugins": ["typescript", "typescript-operations", "graphql-codegen-svelte-apollo"]
+			"plugins": ["typescript", "typescript-operations", "typescript-document-nodes"],
+			"./graphql.schema.json": {
+				"plugins": "introspection"
+			}
 		}
 	}
 }

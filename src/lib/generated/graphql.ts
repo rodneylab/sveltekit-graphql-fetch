@@ -1,9 +1,6 @@
-import client from 'undefined';
-import type {} from '@apollo/client';
-import { readable } from 'svelte/store';
-import type { Readable } from 'svelte/store';
 import gql from 'graphql-tag';
 export type Maybe<T> = T | null;
+export type InputMaybe<T> = Maybe<T>;
 export type Exact<T extends { [key: string]: unknown }> = { [K in keyof T]: T[K] };
 export type MakeOptional<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]?: Maybe<T[SubKey]> };
 export type MakeMaybe<T, K extends keyof T> = Omit<T, K> & { [SubKey in K]: Maybe<T[SubKey]> };
@@ -14,11 +11,8 @@ export type Scalars = {
 	Boolean: boolean;
 	Int: number;
 	Float: number;
-	/** The `BigDecimal` scalar type represents signed fractional values with arbitrary precision. */
 	BigDecimal: any;
-	/** The `Date` scalar type represents a date value as specified by [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601). */
 	Date: any;
-	/** The `DateTime` scalar type represents a date/time value as specified by [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601). */
 	DateTime: any;
 };
 
@@ -93,38 +87,38 @@ export type Query = {
 export type QueryConvertArgs = {
 	amount: Scalars['BigDecimal'];
 	baseCurrency: Scalars['String'];
-	date?: Maybe<Scalars['Date']>;
-	quoteCurrencies?: Maybe<Array<Scalars['String']>>;
+	date?: InputMaybe<Scalars['Date']>;
+	quoteCurrencies?: InputMaybe<Array<Scalars['String']>>;
 };
 
 export type QueryCurrenciesArgs = {
-	currencyCodes?: Maybe<Array<Scalars['String']>>;
-	includeHistorical?: Maybe<Scalars['Boolean']>;
+	currencyCodes?: InputMaybe<Array<Scalars['String']>>;
+	includeHistorical?: InputMaybe<Scalars['Boolean']>;
 };
 
 export type QueryFluctuationArgs = {
-	baseCurrency?: Maybe<Scalars['String']>;
+	baseCurrency?: InputMaybe<Scalars['String']>;
 	dateFrom: Scalars['Date'];
 	dateTo: Scalars['Date'];
-	quoteCurrencies?: Maybe<Array<Scalars['String']>>;
+	quoteCurrencies?: InputMaybe<Array<Scalars['String']>>;
 };
 
 export type QueryHistoricalArgs = {
-	baseCurrency?: Maybe<Scalars['String']>;
+	baseCurrency?: InputMaybe<Scalars['String']>;
 	date: Scalars['Date'];
-	quoteCurrencies?: Maybe<Array<Scalars['String']>>;
+	quoteCurrencies?: InputMaybe<Array<Scalars['String']>>;
 };
 
 export type QueryLatestArgs = {
-	baseCurrency?: Maybe<Scalars['String']>;
-	quoteCurrencies?: Maybe<Array<Scalars['String']>>;
+	baseCurrency?: InputMaybe<Scalars['String']>;
+	quoteCurrencies?: InputMaybe<Array<Scalars['String']>>;
 };
 
 export type QueryTimeSeriesArgs = {
-	baseCurrency?: Maybe<Scalars['String']>;
+	baseCurrency?: InputMaybe<Scalars['String']>;
 	dateFrom: Scalars['Date'];
 	dateTo: Scalars['Date'];
-	quoteCurrencies?: Maybe<Array<Scalars['String']>>;
+	quoteCurrencies?: InputMaybe<Array<Scalars['String']>>;
 };
 
 /** Exchange rate (`quote`) from `baseCurrency` to a `quoteCurrency` on a specific `date` (1 `baseCurrency` = `quote` `quoteCurrency`) */
