@@ -7,7 +7,7 @@
 	export let data: PageData;
 	export let form: ActionData;
 
-	rates.set(data.latest);
+	data.latest && rates.set(data.latest);
 
 	if (form?.rate) {
 		rates.set([...$rates, form.rate]);
