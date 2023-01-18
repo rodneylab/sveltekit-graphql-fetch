@@ -2,6 +2,7 @@
 	import rates from '$lib/shared/stores/rates';
 	import '@fontsource/source-sans-pro/latin.css';
 	import type { ActionData, PageData } from './$types';
+	import '$lib/styles/global.css';
 
 	export let data: PageData;
 	export let form: ActionData;
@@ -54,10 +55,6 @@
 </main>
 
 <style>
-	:global body {
-		margin: 0px;
-	}
-
 	.container {
 		display: flex;
 		flex-direction: column;
