@@ -1,24 +1,20 @@
 import { SWOP_API_KEY } from '$env/static/private';
 import type { Query, QueryLatestArgs } from '$lib/generated/graphql';
 import { error } from '@sveltejs/kit';
+import { print } from 'graphql';
+import gql from 'graphql-tag';
 import type { Actions, PageServerLoad } from './$types';
 
-const query = `
-query latestQuery(
-	$baseCurrency: String = "EUR"
-	$quoteCurrencies: [String!]
-) {
-	latest(
-		baseCurrency: $baseCurrency
-		quoteCurrencies: $quoteCurrencies
-	) {
-		baseCurrency
-		quoteCurrency
-		date
-		quote
+const query = print(gql`
+	query latestQuery($baseCurrency: String = "EUR", $quoteCurrencies: [String!]) {
+		latest(baseCurrency: $baseCurrency, quoteCurrencies: $quoteCurrencies) {
+			baseCurrency
+			quoteCurrency
+			date
+			quote
+		}
 	}
-}
-`;
+`);
 
 export const actions: Actions = {
 	default: async ({ request }) => {
