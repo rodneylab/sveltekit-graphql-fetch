@@ -1,9 +1,9 @@
 import { SWOP_API_KEY } from '$env/static/private';
 import type { Query, QueryLatestArgs } from '$lib/generated/graphql';
+import type { Actions, PageServerLoad } from './$types';
 import { error } from '@sveltejs/kit';
 import { print } from 'graphql';
 import gql from 'graphql-tag';
-import type { Actions, PageServerLoad } from './$types';
 
 const query = print(gql`
 	query latestQuery($baseCurrency: String = "EUR", $quoteCurrencies: [String!]) {
@@ -25,19 +25,19 @@ export const actions: Actions = {
 			if (typeof currency === 'string') {
 				const variables: QueryLatestArgs = {
 					baseCurrency: 'EUR',
-					quoteCurrencies: [currency]
+					quoteCurrencies: [currency],
 				};
 
 				const response = await fetch('https://swop.cx/graphql', {
 					method: 'POST',
 					headers: {
 						'Content-Type': 'application/json',
-						Authorization: `ApiKey ${SWOP_API_KEY}`
+						Authorization: `ApiKey ${SWOP_API_KEY}`,
 					},
 					body: JSON.stringify({
 						query,
-						variables
-					})
+						variables,
+					}),
 				});
 
 				const responseData: { data: Query } = await response.json();
@@ -51,26 +51,26 @@ export const actions: Actions = {
 			console.error(message);
 			return error(500, message);
 		}
-	}
+	},
 };
 
 export const load: PageServerLoad = async () => {
 	try {
 		const variables: QueryLatestArgs = {
 			baseCurrency: 'EUR',
-			quoteCurrencies: ['CAD', 'GBP', 'IDR', 'INR', 'USD']
+			quoteCurrencies: ['CAD', 'GBP', 'IDR', 'INR', 'USD'],
 		};
 
 		const response = await fetch('https://swop.cx/graphql', {
 			method: 'POST',
 			headers: {
 				'Content-Type': 'application/json',
-				Authorization: `ApiKey ${SWOP_API_KEY}`
+				Authorization: `ApiKey ${SWOP_API_KEY}`,
 			},
 			body: JSON.stringify({
 				query,
-				variables
-			})
+				variables,
+			}),
 		});
 
 		const { data: responseData }: { data: Query } = await response.json();
