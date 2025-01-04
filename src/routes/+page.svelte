@@ -1,17 +1,25 @@
 <script lang="ts">
 	import rates from '$lib/shared/stores/rates';
-	import '@fontsource/source-sans-pro/latin.css';
-	import type { ActionData, PageData } from './$types';
 	import '$lib/styles/global.css';
+	import type { ActionData, PageData } from './$types';
+	import '@fontsource/source-sans-pro/latin.css';
 
-	export let data: PageData;
-	export let form: ActionData;
+	let { data, form }: { data: PageData; form: ActionData } = $props();
 
-	data.latest && rates.set(data.latest);
+	$effect(() => {
+		if (data.latest) {
+			rates.set(data.latest);
+		}
+	});
 
-	if (form?.rate) {
-		rates.set([...$rates, form.rate]);
-	}
+	$effect(() => {
+		if (
+			form?.rate &&
+			!$rates.find(({ quoteCurrency }) => quoteCurrency === form.rate.quoteCurrency)
+		) {
+			rates.set([...$rates, form.rate]);
+		}
+	});
 </script>
 
 <main class="container">
